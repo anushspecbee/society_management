@@ -2,8 +2,8 @@
 <head>
     <title>forgetpassword</title>
     <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/forgetpassword.css" />
-   <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/forgetpassword.css" />
+   <link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 
 </head>
 <body style="  background-image: url('images/background.jpeg');
@@ -70,7 +70,7 @@ function mailToUser($mail,$emailto) {
     $message .= "<html><head><title></title></head><body>";
     $message .= "<p>Hello </p>";
     $message .= "<p>your can reset the password using this link</p>";
-    $message .= '<a href="http://localhost/Society/mail/labour_newpassword.php">click here</a>';
+    $message .= '<a href="http://localhost/society_management/mail/labour_newpassword.php">click here</a>';
     $message .= "<p>Thank you for contacting royal society</p>";
     $message .= "</body></html>";
     $mail->Subject = $subject;

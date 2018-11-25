@@ -17,9 +17,6 @@
     <h2 class="inactive underlineHover"><a href="https://royalsociety.org" target="blank">About </a></h2>
     <h2 class="inactive underlineHover"><a href="admin_dashboard.php" >Admin Dashboard </a></h2>
 
-
-
-
     <!-- Icon -->
     <div class="fadeIn first">
       <h3>WELCOME ADMIN</h3>
@@ -77,7 +74,7 @@ $mobile=  $labour_number;
 //$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9481627975&Password=K4542A&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=mithu8GdpmJQV5K0z7rAqHvxlN3a") ,true);
 //$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9916806095&Password=*******&Message=".urlencode($message)."&To=".urlencode($mobile)."&Key=akshaB8dZMHNhkRqD2OUfn4a") ,true);
 //$json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=7829487050&Password=anush5397&Message=".urlencode($issue_id).urlencode($issue_subject).urlencode($issue_des)."&To=".urlencode($mobile)."&Key=anushno6GgpDxkAv9QiyB") ,true);
-//  $json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9591318694&Password=sahanan@8&Message=".urlencode($issue_id).urlencode($issue_subject).urlencode($issue_des)."&To=".urlencode($mobile)."&Key=sahanma4EG9WDrYIyvTcOB1PJ8") ,true);
+// $json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=9591318694&Password=sahanan@8&Message=".urlencode($issue_id).urlencode($issue_subject).urlencode($issue_des)."&To=".urlencode($mobile)."&Key=sahanma4EG9WDrYIyvTcOB1PJ8") ,true);
 $json = json_decode(file_get_contents("https://smsapi.engineeringtgr.com/send/?Mobile=7618751299&Password=maithri&Message=".urlencode($issue_id).urlencode($issue_subject).urlencode($issue_des)."&To=".urlencode($mobile)."&Key=maithto9JciYTMpsk52lUL7un4e") ,true);
 
 if ($json["status"]==="success") {
