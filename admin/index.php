@@ -55,7 +55,7 @@ if(($_POST['admin-name'] == $admin_name) && ($_POST['admin-password'] == $admin_
 }
 else{
 
-  header('Location:admin_login.php');
+  header('Location:index.php');
 
 }
 }
