@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>specbee</title>
+    <title>Society Management</title>
     <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
@@ -21,7 +21,7 @@
 
 
     <!-- Login Form -->
-    <form action="#" method="POST" >
+    <form action="" method="POST" >
     <select id="position" class="fadeIn first"  name="position" placeholder="Position" >
             <option>ELECTRICITY</option>
             <option>WATER</option>
@@ -63,8 +63,6 @@ $status='close';
 $end_date=$_POST['edate'];
 $otp=$_POST['otp'];
 $labour->update_labour($status,$end_date,$otp);
-
-
 
 
 $name=$_POST['labour'];

@@ -2,8 +2,6 @@
 
 require("../database.php");
 
-
-
 class show {
     // use display;
     public function retrieve($abc,$category){

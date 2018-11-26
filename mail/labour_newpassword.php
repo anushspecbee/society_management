@@ -1,14 +1,14 @@
 <?php
-include("database_mithun.php");
+include("../database.php");
 if(isset($_POST['recover-submit']))
 {
-  global $connection;
+  global $conn;
 $mail =$_POST['mail'];
 $newpasswd = $_POST['newcpassword'];
-$newpasswd = md5($newpasswd);
+$newpasswd = password_hash($newpasswd,PASSWORD_DEFAULT);
 $sql = "UPDATE register set `password`='$newpasswd' where email='$mail' ";
 
-    $res = mysqli_query($connection,$sql);
+    $res = mysqli_query($conn,$sql);
 
     if($res)
     {
@@ -21,14 +21,14 @@ $sql = "UPDATE register set `password`='$newpasswd' where email='$mail' ";
 <html>
 <head>
     <title>forgetpassword</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
-    <link rel="stylesheet" type="text/css" media="screen" href="css/forgetpassword.css" />
-    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
-    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/forgetpassword.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
     <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 </head>
-<body style="background-image: url('images/background.jpeg');
+<body style="background-image: url('../images/background.jpeg');
   background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

@@ -1,5 +1,6 @@
 <?php
 include("admin_func.php");
+require_once('session.php');
 $id = null;
 if ( !empty($_GET['id'])) {
     $id = $_GET['id'];

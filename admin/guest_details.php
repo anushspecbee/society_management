@@ -1,6 +1,6 @@
 <?php
 require'admin_func.php';
-
+require_once('session.php');
 
 if(isset($_POST['pass_verify'])){
     $pass_id=$_POST['pass_id'];

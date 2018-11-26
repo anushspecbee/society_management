@@ -1,5 +1,6 @@
 <?php
 require 'user_func.php';
+require_once('session.php');
 //require 'guest.php';
 
 if(isset($_POST['pass'])){
@@ -55,17 +56,20 @@ $message="Your Unique Id for Society Management is:$guest_pass";
    <div class="wrapper fadeInDown">
 
        <div id="formContent" style="height:550px;">
+       <h2 class="active"> pass system </a></h2>
+     <h2 class="inactive underlineHover"> <a href="dashboard.php"> dashboards </a></h2>
+
+
 
   	   <div class="fadeIn first">
   
         <form action="" method="POST">
-        <h3 id="pass_system_title">Guest User Pass System</h3>
         <h4 id="pass_created"></h4>
-        <input type="text" class="fadeIn first" id="guest_name" name="guest_name"required=required placeholder="name"> <br>   
-      <input type="email" name="email" id="guest_email" class="fadeIn second"  placeholder="Email"><br>
-      <input type="number" id="guest_room" class="fadeIn third" name="guest_room" placeholder="Room No"><br>
-       <input type="mobile" id="guest_mobile" class="fadeIn fourth" name="guest_mobile"  placeholder="Mobile No" required=required><br>
-      <input type="date" id="booked_day" class="fadeIn fifth" name="booked_day" placeholder="Booked Date: " onchange="this.className=(this.value!=''?'has-value':'')"><br>
+        <input type="text" class="fadeIn first"  name="guest_name"required=required placeholder="name"> <br>   
+      <input type="email" name="email"  class="fadeIn second"  placeholder="Email"><br>
+      <input type="number" class="fadeIn third" name="guest_room" placeholder="Room No"><br>
+       <input type="mobile"  class="fadeIn fourth" name="guest_mobile"  placeholder="Mobile No" required=required><br>
+      <input type="date"  class="fadeIn fifth" name="booked_day" placeholder="Booked Date: " onchange="this.className=(this.value!=''?'has-value':'')"><br>
        <input type="hidden" id="password_hash" name="password_hash" required=required>
        <div class="form-controls"> 
        <span class="fadeIn sixth" id="create_text">click here to generate pass id</span> 

@@ -23,7 +23,7 @@ if(isset($_POST['signup']))
         }
 
     $adhar =test_input($_POST['adhar']);
-    if(!preg_match('/^[0-9]{10}+$/', $adhar))
+    if(!preg_match('/^[0-9]{12}+$/', $adhar))
     {
         echo "<center>Invalid adhar no.</center>";
         exit;
@@ -44,20 +44,18 @@ if(isset($_POST['signup']))
     }
 
     $password = $_POST['passwd'];
-    $password = md5($password);
+    $password = password_hash($password,PASSWORD_DEFAULT);
 
-    $con_password = md5($_POST['con-passwd']);
+    $con_password = $_POST['con-passwd'];
 
-    if ($con_password==$password) {
+
+
+    if (password_verify($con_password,$password)) {
    //     echo 'Password is valid!';
     } else {
         echo 'Invalid password.';
         exit;
     }
-
-   
-
-   
 
    $data = array(
         'name'=>$name,
@@ -71,7 +69,6 @@ if(isset($_POST['signup']))
     
    $ret = $db->dbRowInsert("register",$data);
    
-
     // $fields=array("name","adhar","email","contact");
     $data = array('name'=>$name,
     'adhar'=>$adhar,
@@ -117,7 +114,7 @@ if(isset($_POST['signup']))
 
 
     <!-- Login Form -->
-    <form method="POST" action="#">
+    <form method="POST" action="">
     <input type="text" id="name" class="fadeIn second"  required="required" name="name" placeholder="Full Name">
       <input type="text" id="email" class="fadeIn third"  required="required" name="email" placeholder="Email">
       <input type="text" id="eid" class="fadeIn fourth"  required="required" name="adhar" placeholder="Adhar Number">

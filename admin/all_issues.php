@@ -1,5 +1,6 @@
 <?php
 include("admin_func.php");
+require_once('session.php');
 $category = null;
 if ( !empty($_GET['category'])) {
     $category = $_GET['category'];
@@ -24,7 +25,7 @@ $all=$show->all_issues($conn,$category);
 
     <script src="main.js"></script>
 </head>
-<body style="background-image: url('images/background.jpeg');
+<body style="background-image: url('../images/background.jpeg');
   background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;

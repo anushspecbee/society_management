@@ -1,9 +1,6 @@
 <!-- <?php 
 
-if(isset($_SESSION['h'])){
-
-
-}
+require_once('session.php');
 
 ?> -->
 

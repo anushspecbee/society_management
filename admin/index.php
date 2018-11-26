@@ -1,3 +1,34 @@
+<?php
+
+require('../database.php');
+session_start();
+if(isset($_POST['admin_login']))
+{
+
+    global $conn;
+    $admin_name=$_POST['admin-name'];
+    $admin_password=$_POST['admin-password'];
+    $sql="SELECT * from register where id='1'";
+    $result=mysqli_query($conn,$sql);
+    $res=$result->fetch_assoc();
+
+    if(($res['email'] === $admin_name && password_verify($admin_password,$res['password'])))
+        {
+          $_SESSION['email'] = $res['email'];
+          header('Location:admin_dashboard.php');
+        }
+
+        else{
+
+         header('Location:index.php');
+
+        }
+
+    }
+?>
+
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -7,6 +38,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
     <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/styleaks.css" />
+
     <script src="main.js"></script>
 </head>
 <body>
@@ -27,9 +60,9 @@
     </div>
 
     <!-- Login Form -->
-    <form action="#" method="POST">
+    <form action="" method="POST">
 
-      <input type="text" name="admin-name" id="login" class="fadeIn second"  placeholder="Enter admin name">
+      <input type="email" name="admin-name" id="login" class="fadeIn second"  placeholder="Enter admin email">
       <input type="password" id="password" class="fadeIn third" name="admin-password" placeholder="password">
       <input type="submit" class="fadeIn fourth" name="admin_login" value="Log In">
     </form>
@@ -40,24 +73,8 @@
 </body>
 </html>
 
-<?php
-  if(isset($_POST['admin_login'])){
-//   $name="admin";
-// $password="admin";
-$admin_name="admin";
-$admin_password="admin";
-if(($_POST['admin-name'] == $admin_name) && ($_POST['admin-password'] == $admin_password)){
 
 
- 
-  header('Location:admin_dashboard.php');
 
-}
-else{
 
-  header('Location:index.php');
 
-}
-}
-
-?>

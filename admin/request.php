@@ -1,5 +1,6 @@
 <?php
 require('admin_func.php');
+require_once('session.php');
 
 //$var = new ;
 //$conn = $var->getConnection();
@@ -100,17 +101,21 @@ $(document).ready(function() {
 
         if($status == "0")
         {  
-             echo $name."<br>";
-             echo $email."<br>";
-             echo $adhar."<br>";
-             echo $contact."<br>";
+            echo "<div>";
+            echo "<hr>";
+             echo "<h3> $name.<h3>";
+             echo "<h3>$email.<h3>";
+             echo "<h3>$adhar.<h3>";
+             echo "<h3>$contact.<h3>";
              
         ?>
 
             <button type="button" class="approve" name="approve" id="approve" data-id="<?php echo $email; ?>">Approve</button>
             <button type="button" class="delete" name="delete" id="delete" data-id="<?php echo $email; ?>">Delete<br></button>
-
-            <?php   
+            
+            <?php  
+            echo "<hr>"; 
+            echo "</div>";
         }
         
         ?>

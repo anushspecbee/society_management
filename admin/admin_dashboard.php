@@ -1,6 +1,8 @@
 <?php
 
 include('admin_func.php');
+require_once('session.php');
+
   
 ?>
 
@@ -15,9 +17,10 @@ include('admin_func.php');
     <link rel="stylesheet" type="text/css" media="screen" href="../css/bootstrap.min.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
     <link rel="stylesheet" type="text/css" media="screen" href="../css/style.css" />
+
     <script src="main.js"></script>
 </head>
-<body  style="background-image: url('images/background.jpeg');
+<body  style="background-image: url('../images/background.jpeg');
   background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
@@ -30,6 +33,7 @@ include('admin_func.php');
      <h2 class="inactive underlineHover"> <a href="request.php"> Pending request </a></h2>
      <h2 class="inactive underlineHover"> <a href="verify_pass.php">Pass Verification </a></h2>
      <h2 class="inactive underlineHover"><a href="admin_page.php" target="blank">update_labour </a></h2>
+     <h2 class="inactive underlineHover"><a href="labour_details.php" target="blank">Add Labourers </a></h2>
 
 
     <!-- Icon -->

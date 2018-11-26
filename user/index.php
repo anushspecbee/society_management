@@ -16,8 +16,6 @@
     <h2 class="inactive underlineHover"><a  href="../index.html" >Home </a></h2>
     <h2 class="active"> Sign In </h2>
     <h2 class="inactive underlineHover"><a href="signup.php">Sign Up </a></h2>
-    
-
 
     <!-- Icon -->
     <div class="fadeIn first">
@@ -39,7 +37,12 @@
 
 <?php
 require("user_func.php");
+session_start();
 
+if(isset($_SESSION['user_id']))
+{
+  header('Location:dashboard.php');
+}
 
 // if($_GET['status']!=''){
 // if($_GET['status']=='err' ){
@@ -51,13 +54,13 @@ if(isset($_POST['login'])){
 $email=$_POST['email'];
 $password=$_POST['password'];
 //echo $email,$password;
-$password = md5($password);
 $status = $db->login($email,$password);
 
 if(!$status)
 {
   echo "<h4 class='text-center' style='color:red'> Invalid user or not approved</h4>";
 }
+
 }
 
 
