@@ -1,6 +1,6 @@
 <?php
 
-require('database.php');
+require('admin_func.php');
 
 
 if(isset($_POST['id'])){
@@ -9,10 +9,8 @@ if(isset($_POST['id'])){
     $sql = "DELETE FROM user_request where email='$id' ";
     $res = mysqli_query($conn,$sql);
 
-    //NOTE: The user hast to be deleted from the register table too...
-
-    // $query = "DELETE FROM register where email='$id' ";
-    // $result = mysqli_query($conn,$query);
+    $query = "DELETE FROM register where email='$id' ";
+    $result = mysqli_query($conn,$query);
 
 }
 

@@ -1,15 +1,15 @@
 <?php
-require('database.php');
+require('admin_func.php');
 
 if(isset($_POST['id'])){
     $id=$_POST['id'];
     $sql = "UPDATE user_request set status='1' where email='$id' ";
+    echo $sql;
     $res = mysqli_query($conn,$sql);
+    echo $res['status'];
 
-    //NOTE: ALso set the status in register table to 1 if admin approves
-
-    // $query = "UPDATE register set status='1' where email='$id' ";
-    // $result = mysqli_query($conn,$query);
+    $statement= "UPDATE register set status='1' where email='$id' ";
+    $res = mysqli_query($conn,$statement);
    
 }
 

@@ -1,9 +1,8 @@
 <?php
-<<<<<<< HEAD:admin/request.php
-=======
-require('database.php');
->>>>>>> 9a91f65b2451765fe2fae8517b7d6d6a41e991e0:admin/request.php
-require('dbclass.php');
+require('admin_func.php');
+
+//$var = new ;
+//$conn = $var->getConnection();
 
 $flag = 0;
 $result = mysqli_query($conn,"SELECT * FROM user_request");
@@ -16,9 +15,9 @@ $result = mysqli_query($conn,"SELECT * FROM user_request");
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Society Management</title>
-    <link rel="shortcut icon" type="image/png" href="images/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="../images/favicon.ico"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/index.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="../css/index.css" />
     <script src="main.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script>
@@ -93,7 +92,6 @@ $(document).ready(function() {
     <?php 
 
          while($row = mysqli_fetch_array($result)) {
-            echo "<hr>";
              $name = $row['name'];
              $email = $row['email'];
              $adhar = $row['adhar'];
@@ -101,13 +99,11 @@ $(document).ready(function() {
              $status = $row['status'];
 
         if($status == "0")
-        { 
-            echo "<div class='text-left'>";
-             echo "<h3>Name:$name<h3>";
-             echo "<h4>Email:$email<h4>";
-             echo "<h4>Adhar No.:$adhar<h4>";
-             echo "<h4>Mobile :$contact <h4>";
-            
+        {  
+             echo $name."<br>";
+             echo $email."<br>";
+             echo $adhar."<br>";
+             echo $contact."<br>";
              
         ?>
 
@@ -115,10 +111,11 @@ $(document).ready(function() {
             <button type="button" class="delete" name="delete" id="delete" data-id="<?php echo $email; ?>">Delete<br></button>
 
             <?php   
-               echo "</div>" ;
-               echo "<hr>";
-        }   
+        }
+        
         ?>
+
+
 <?php
 }
         ?>

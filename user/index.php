@@ -15,49 +15,51 @@
     <!-- Tabs Titles -->
     <h2 class="inactive underlineHover"><a  href="../index.html" >Home </a></h2>
     <h2 class="active"> Sign In </h2>
-    <h2 class="inactive underlineHover"><a href="https://royalsociety.org" target="blank">About </a></h2>
-
-
+    <h2 class="inactive underlineHover"><a href="signup.php">Sign Up </a></h2>
+    
 
 
     <!-- Icon -->
     <div class="fadeIn first">
       <img src="../images/specbee.png" id="icon" alt="User Icon" />
-      <h3>WELCOME ADMIN</h3>
     </div>
 
     <!-- Login Form -->
-    <form action="#" method="POST">
-
-      <input type="text" name="admin-name" id="login" class="fadeIn second"  placeholder="Enter admin name">
-      <input type="password" id="password" class="fadeIn third" name="admin-password" placeholder="password">
-      <input type="submit" class="fadeIn fourth" name="admin_login" value="Log In">
+    <form action="" method="POST">
+      <input type="text" name="email" id="login" class="fadeIn second"  placeholder="Email">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password">
+      <input type="submit" class="fadeIn fourth" name="login" value="Log In">
     </form>
     <!-- Remind Passowrd -->
     <div id="formFooter">
-<p>Royal society services</p>
+    <a class="underlineHover" href="../mail/forgetpassword.php">Forgot Password?</a>
 </div>
 </body>
 </html>
 
 <?php
-  if(isset($_POST['admin_login'])){
-//   $name="admin";
-// $password="admin";
-$admin_name="admin";
-$admin_password="admin";
-if(($_POST['admin-name'] == $admin_name) && ($_POST['admin-password'] == $admin_password)){
+require("user_func.php");
 
 
- 
-  header('Location:admin_dashboard.php');
+// if($_GET['status']!=''){
+// if($_GET['status']=='err' ){
+//   echo 'Invalid Credintials';
+// }
+// }
 
+if(isset($_POST['login'])){
+$email=$_POST['email'];
+$password=$_POST['password'];
+//echo $email,$password;
+$password = md5($password);
+$status = $db->login($email,$password);
+
+if(!$status)
+{
+  echo "<h4 class='text-center' style='color:red'> Invalid user or not approved</h4>";
 }
-else{
-
-  header('Location:index.php');
-
 }
-}
+
+
 
 ?>
